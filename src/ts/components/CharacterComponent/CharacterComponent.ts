@@ -5,7 +5,7 @@ import Component from "../Component/Component.js";
 class CharacterInfo extends Component {
   character: King | Fighter;
   constructor(parentElement: Element, character: King | Fighter) {
-    super(parentElement, "div", "container");
+    super(parentElement, "li", "col");
     this.character = character;
   }
 

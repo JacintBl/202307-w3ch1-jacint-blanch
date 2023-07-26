@@ -1,9 +1,6 @@
 import AppComponent from "./components/AppComponent/AppComponent.js";
 
-const appBody = document.querySelector(".app")!;
-if (!appBody) {
-  throw new Error("Missing Elements");
-}
+const appBody = document.querySelector(".container")!;
 
 const containerComponent = new AppComponent(appBody);
 
