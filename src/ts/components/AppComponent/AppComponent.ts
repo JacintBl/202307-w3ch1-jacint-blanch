@@ -4,23 +4,34 @@ import Component from "../Component/Component.js";
 
 class AppComponent extends Component {
   constructor(parentElement: Element) {
-    super(parentElement, "div", "container");
+    super(parentElement, "div", "app-container");
   }
 
   render() {
     this.element.innerHTML = `
-      <ul class="characters-list">
-        <li class="character-content"></li>
+     <ul class="characters-list row list-unstyled">
       </ul>
     `;
-    const characterContentElement =
-      this.element.querySelector(".character-content")!;
+    const charactersListElement =
+      this.element.querySelector(".characters-list")!;
 
     const joffreyCharacterDataComponent = new CharacterInfo(
-      characterContentElement,
+      charactersListElement,
       characters[0]
     );
     joffreyCharacterDataComponent.render();
+
+    const daenerysCharacterDataComponent = new CharacterInfo(
+      charactersListElement,
+      characters[1]
+    );
+    daenerysCharacterDataComponent.render();
+
+    const jaimeCharacterData = new CharacterInfo(
+      charactersListElement,
+      characters[2]
+    );
+    jaimeCharacterData.render();
   }
 }
 

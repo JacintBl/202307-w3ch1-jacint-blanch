@@ -5,7 +5,7 @@ abstract class Component {
   constructor(parentElement: Element, tag: string, className = "") {
     this.element = document.createElement(tag);
     this.element.className = className;
-    this.parentElement = parentElement;
+    parentElement.append(this.element);
   }
 
   abstract render(): void;
